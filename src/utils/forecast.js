@@ -13,10 +13,12 @@ const forecast = (latitude, longitude, callback) => {
             const temperature = body.current.temperature;
             const feelsLike = body.current.feelslike;
             const weatherType = body.current.weather_descriptions[0];
+            const windSpeed = body.current.wind_speed;
             const data = {
                 temperature,
                 feelsLike,
-                weatherType
+                weatherType,
+                windSpeed
             }
             callback(undefined, data);
         }

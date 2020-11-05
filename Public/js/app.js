@@ -20,9 +20,9 @@ weatherForm.addEventListener('submit', (e) => {
                     statusMessage.textContent = 'Error'
                     dataMessage.textContent = data.error
                 } else {
-                    const {latitude, longitude, location, temperature, feelsLike, weatherType} = data
+                    const {latitude, longitude, location, temperature, feelsLike, weatherType, windSpeed} = data
                     statusMessage.textContent = 'Success'
-                    dataMessage.textContent = 'It is ' + weatherType + ' in ' + location + ' (' + latitude + ', ' + longitude + '), the temperature is ' + temperature + '°C (feels like '+ feelsLike + '°C)'
+                    dataMessage.textContent = 'It is ' + weatherType + ' in ' + location + ' (' + latitude + ', ' + longitude + '), the temperature is ' + temperature + '°C (feels like '+ feelsLike + '°C). Wind speed is ' + windSpeed + 'm/s.'
                     console.log(data)
                 }
             })
