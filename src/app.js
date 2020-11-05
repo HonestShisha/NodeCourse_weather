@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 
 
 const app = express();
+const port = process.env.PORT || 3000
 
 // Define path for express config
 const publicDirectoryPath = path.join(__dirname, '../Public')
@@ -73,15 +74,6 @@ app.get('/weather', (req, res) => {
         })
         
     })
-
-    // res.send({
-    //     location: req.query.location,
-    //     forecast: {
-    //         temperature: 16,
-    //         feelsLike: 14,
-    //         weatherType: 'Cloudy'
-    //     }
-    // })
 })
 
 app.get('/products', (req, res) => {
@@ -113,6 +105,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port )
 })
